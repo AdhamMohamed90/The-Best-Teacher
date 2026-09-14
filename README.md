@@ -92,6 +92,7 @@ The project was developed as a **full-stack web application**, connecting the fr
 
 ## 🏗️ Project Structure
 
+```text
 Teacher-Finder/
 │
 ├── config/
@@ -190,7 +191,7 @@ Teacher-Finder/
 ├── serve.js
 ├── server.js
 └── README.md
-
+```
 ---
 📄 License
 
