@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - TutorHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">TutorHub</a>
+        <nav><span id="themeToggle"></span><span id="userName"></span><button class="btn btn-outline btn-sm" onclick="logout()">Logout</button></nav>
+    </header>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="search.html"><span class="icon">🔍</span> Find Tutors</a></li>
+                <li><a href="bookings.html" class="active"><span class="icon">📅</span> My Bookings</a></li>
+                <li><a href="groups.html"><span class="icon">👥</span> Groups</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="page-header"><h1>My Bookings</h1></div>
+            <div id="bookingsList"></div>
+        </main>
+    </div>
+    <nav class="mobile-nav"><a href="dashboard.html"><span>📊</span> Home</a><a href="search.html"><span>🔍</span> Search</a><a href="bookings.html" class="active"><span>📅</span> Bookings</a><a href="groups.html"><span>👥</span> Groups</a></nav>
+    <script src="../js/api.js?v=5"></script>
+    <script src="../js/auth.js?v=5"></script>
+    <script src="../js/helpers.js?v=5"></script>
+    <script src="../js/theme.js?v=5"></script>
+    <script src="js/bookings.js?v=5"></script>
+    <script>createThemeToggle("themeToggle");</script>
+</body>
+</html>

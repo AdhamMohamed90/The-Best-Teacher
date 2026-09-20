@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - TutorHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">TutorHub</a>
+        <nav><span id="themeToggle"></span><span id="userName"></span><button class="btn btn-outline btn-sm" onclick="logout()">Logout</button></nav>
+    </header>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="active"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="search.html"><span class="icon">🔍</span> Find Tutors</a></li>
+                <li><a href="bookings.html"><span class="icon">📅</span> My Bookings</a></li>
+                <li><a href="groups.html"><span class="icon">👥</span> Groups</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="page-header"><h1>Welcome, Student!</h1></div>
+            <div class="grid grid-2 mb-3">
+                <div class="card" style="text-align:center;padding:32px;"><div style="font-size:48px;margin-bottom:12px;">🔍</div><h3 style="margin-bottom:8px;">Find a Tutor</h3><p style="color:var(--gray-500);font-size:14px;margin-bottom:16px;">Search for tutors by subject, grade, and city</p><a href="search.html" class="btn btn-primary">Start Searching</a></div>
+                <div class="card" style="text-align:center;padding:32px;"><div style="font-size:48px;margin-bottom:12px;">👥</div><h3 style="margin-bottom:8px;">Join a Group</h3><p style="color:var(--gray-500);font-size:14px;margin-bottom:16px;">Browse available study groups and join</p><a href="groups.html" class="btn btn-secondary">Browse Groups</a></div>
+            </div>
+            <div class="grid grid-2">
+                <div class="card"><div class="card-header"><h2>Upcoming Bookings</h2><a href="bookings.html" class="btn btn-sm btn-outline">View All</a></div><div id="upcomingBookings"></div></div>
+                <div class="card"><div class="card-header"><h2>My Groups</h2><a href="groups.html" class="btn btn-sm btn-outline">View All</a></div><div id="myGroups"></div></div>
+            </div>
+        </main>
+    </div>
+    <nav class="mobile-nav"><a href="dashboard.html" class="active"><span>📊</span> Home</a><a href="search.html"><span>🔍</span> Search</a><a href="bookings.html"><span>📅</span> Bookings</a><a href="groups.html"><span>👥</span> Groups</a></nav>
+    <script src="../js/api.js?v=5"></script>
+    <script src="../js/auth.js?v=5"></script>
+    <script src="../js/helpers.js?v=5"></script>
+    <script src="../js/theme.js?v=5"></script>
+    <script src="js/dashboard.js?v=5"></script>
+    <script>createThemeToggle("themeToggle");</script>
+</body>
+</html>
