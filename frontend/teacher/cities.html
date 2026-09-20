@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities - TutorHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">TutorHub</a>
+        <nav>
+            <span id="themeToggle"></span>
+            <span id="userName"></span>
+            <button class="btn btn-outline btn-sm" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="profile.html"><span class="icon">👤</span> Profile</a></li>
+                <li><a href="subjects.html"><span class="icon">📚</span> Subjects</a></li>
+                <li><a href="cities.html" class="active"><span class="icon">📍</span> Cities</a></li>
+                <li><a href="availability.html"><span class="icon">🕐</span> Availability</a></li>
+                <li><a href="groups.html"><span class="icon">👥</span> Groups</a></li>
+                <li><a href="bookings.html"><span class="icon">📅</span> Bookings</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="page-header"><h1>My Cities</h1><button class="btn btn-primary" onclick="openModal()">+ Add City</button></div>
+            <div id="citiesList"></div>
+            <div id="modal" class="modal-overlay hidden" onclick="if(event.target===this)closeModal()">
+                <div class="modal">
+                    <h2>Add City</h2>
+                    <div id="modalError" class="alert alert-error hidden"></div>
+                    <form id="cityForm">
+                        <div class="form-group"><label>City</label><select id="city_id" class="form-control">
+                            <option value="1">Masr El Gadida</option><option value="2">El Nozha</option><option value="3">Ain Shams</option><option value="4">Madinet Nasr</option><option value="5">El Salam</option><option value="6">El Matariya</option><option value="7">El Marg</option><option value="8">El Zaitoun</option><option value="9">El Amiria</option><option value="10">Shubra</option><option value="11">El Zawya El Hamra</option><option value="12">Hadayek El Qoba</option><option value="13">Rod El Farag</option><option value="14">El Sharabiya</option><option value="15">El Sahel</option><option value="16">El Abbasia</option><option value="17">Manshiyet Naser</option><option value="18">Wust El Balad</option><option value="19">Bulaq</option><option value="20">Abdeen</option><option value="21">El Azbakeya</option><option value="22">El Muski</option><option value="23">Bab El Shaaria</option><option value="24">Zamalek</option><option value="25">El Gamaliya</option><option value="26">El Hussein</option><option value="27">El Azhar</option><option value="28">El Darb El Ahmar</option><option value="29">Sayeda Zeinab</option><option value="30">Masr El Qadima</option><option value="31">El Manial</option><option value="32">El Mokattam</option><option value="33">El Basatin</option><option value="34">Dar El Salam</option><option value="35">Maadi</option><option value="36">Tora</option><option value="37">Helwan</option><option value="38">El Masra</option><option value="39">El Tebeen</option><option value="40">15 May</option><option value="41">New Cairo</option><option value="42">First Settlement</option><option value="43">Third Settlement</option><option value="44">Fifth Settlement</option><option value="45">El Nargis</option><option value="46">El Banafsag</option><option value="47">El Lotus</option><option value="48">North Investors</option><option value="49">South Investors</option><option value="50">El Rehab</option><option value="51">Madinaty</option><option value="52">El Shorouk</option><option value="53">Badr</option><option value="54">Gesr El Suez</option><option value="55">Giza</option><option value="56">Dokki</option><option value="57">Agouza</option><option value="58">Mohandessin</option><option value="59">Met Oqba</option><option value="60">Imbaba</option><option value="61">El Warraq</option><option value="62">Boulaq El Dakrour</option><option value="63">Safet El Leban</option><option value="64">Ard El Liwa</option><option value="65">Monib</option><option value="66">El Omraniya</option><option value="67">El Talabiya</option><option value="68">Haram</option><option value="69">Faisal</option><option value="70">El Maroutiya</option><option value="71">Kfr Tahrmes</option><option value="72">Manshiyet El Bakari</option><option value="73">Hadayek El Ahram</option><option value="74">El Ramaya</option><option value="75">Abu Nomros</option><option value="76">El Hawamdeya</option><option value="77">El Badrasheen</option><option value="78">6 October</option><option value="79">Sheikh Zayed</option><option value="80">Hadayek October</option><option value="81">New October</option><option value="82">Kerdasa</option><option value="83">Oseem</option><option value="84">Shubra El Kheima</option><option value="85">Behetim</option><option value="86">Mostorod</option><option value="87">Qalyub</option><option value="88">El Khosous</option><option value="89">El Obour</option><option value="90">El Khanke</option><option value="91">El Qanater El Khairiya</option>
+                        </select></div>
+                        <div class="modal-actions"><button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button><button type="submit" class="btn btn-primary">Save</button></div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <nav class="mobile-nav"><a href="dashboard.html"><span>📊</span> Home</a><a href="subjects.html"><span>📚</span> Subjects</a><a href="groups.html"><span>👥</span> Groups</a><a href="bookings.html"><span>📅</span> Bookings</a></nav>
+    <script src="../js/api.js?v=5"></script>
+    <script src="../js/auth.js?v=5"></script>
+    <script src="../js/helpers.js?v=5"></script>
+    <script src="../js/theme.js?v=5"></script>
+    <script src="js/cities.js?v=5"></script>
+    <script>createThemeToggle("themeToggle");</script>
+</body>
+</html>
